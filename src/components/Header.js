@@ -38,7 +38,9 @@ const Header = () => {
             <div className="row align-items-center">
               <div className="col-2 ">
                 <h2 className="m-0 text-center">
-                  <Link className="text-white">SPD SHOP</Link>
+                  <Link className="text-white" to="/">
+                    SPD SHOP
+                  </Link>
                 </h2>
               </div>
               <div className="col-5">
@@ -152,7 +154,7 @@ const Header = () => {
                     <div className="d-flex align-items-center gap-15">
                       <NavLink to="/">Home</NavLink>
                       <NavLink to="/product">Our Store</NavLink>
-                      <NavLink to="/blogs">Blogs</NavLink>
+                      <NavLink to="/blog">Blogs</NavLink>
                       <NavLink to="/contact">Contact</NavLink>
                     </div>
                   </div>

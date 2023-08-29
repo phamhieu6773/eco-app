@@ -16,6 +16,9 @@
   --color-1c1c1b: #1c1c1b;
 }
 
+.pt-128 {
+  margin-top: 128px;
+}
 
 
 .section-heading {
@@ -89,9 +92,9 @@ a {
   background-color: var(--color-febd69);
 }
 
-.header-upper.header-upper-links img {
-  width: 35px;
-  height: 35px;
+.header-upper .header-upper-links img {
+  width: 25px;
+  height: 25px;
 }
 
 .header-bottom .menu-links a,
@@ -329,24 +332,38 @@ footer .input-group-text {
 
 .product-card .product-image {
   /* height: 270px; */
+  position: relative;
+  height: 200px;
   display: flex;
   justify-content: center;
 }
 
-/* .product-card .product-image img {
-  object-fit: contain;
-} */
+.product-card .product-image img {
+  /* object-fit: contain; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+
+}
 
 .product-card .product-image>img:last-child {
-  display: none;
+  /* display: none; */
+  opacity: 0;
 }
 
 .product-card:hover .product-image>img:nth-child(1) {
-  display: none;
+  /* display: none; */
+  opacity: 0;
 }
 
 .product-card:hover .product-image>img:last-child {
   display: block;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .product-card:hover .action-bar {
@@ -379,7 +396,7 @@ footer .input-group-text {
 }
 
 .action-bar {
-  top: 5%;
+  top: 10%;
   right: -23px;
   transition: 0.3s;
 }
@@ -402,6 +419,9 @@ footer .input-group-text {
 /* Special Product ends here */
 
 /* famous card */
+.famous-card {
+  border-radius: 10px;
+}
 
 .famous-card .famous-content {
   top: 10%;
@@ -409,7 +429,14 @@ footer .input-group-text {
 }
 
 .famous-card img {
+  height: 400px;
+  width: 306px;
   border-radius: 10px;
+  transition: all .3s ease;
+}
+
+.famous-card img:hover {
+  transform: scale(1.1);
 }
 
 .famous-content h5 {
@@ -611,8 +638,8 @@ footer .input-group-text {
 .wishlist-card .cross {
   top: 15px;
   right: 15px;
-  width: 25px;
-  padding: 3px;
+  /* width: 25px;
+  padding: 3px; */
   cursor: pointer;
 }
 
@@ -888,3 +915,34 @@ footer .input-group-text {
 }
 
 /* Shipping page ends here */
+
+
+/* Smartphones (portrait) */
+@media only screen and (max-width: 768px) {
+
+  /* Styles */
+}
+
+/* iPads (portrait and landscape)  */
+@media only screen and (min-width: 768px) and (max-width: 1152px) {
+
+  /* Styles */
+  .header-upper .header-upper-links img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .header-upper .header-upper-links p {
+    font-size: 12px;
+  }
+}
+
+/* Desktops and laptops  */
+@media only screen and (min-width: 1153px) {
+
+  /* Styles */
+  .header-upper .header-upper-links img {
+    width: 35px;
+    height: 35px;
+  }
+}

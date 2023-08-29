@@ -9,6 +9,10 @@ import service2 from "../images/service-02.png";
 import service3 from "../images/service-03.png";
 import service4 from "../images/service-04.png";
 import service5 from "../images/service-05.png";
+import famoust1 from "../images/famoust1.png";
+import famoust2 from "../images/famoust2.png";
+import famoust3 from "../images/famoust3.png";
+import famoust4 from "../images/famoust4.png";
 import camera from "../images/camera.jpg";
 import tv from "../images/tv.jpg";
 import headphone from "../images/headphone.jpg";
@@ -16,10 +20,13 @@ import { Link } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import BlogCard from "../components/BlogCard";
 import ProductCard from "../components/ProductCard";
+import SpecialProduct from "../components/SpecialProduct";
+import Meta from "../components/Meta";
 
 const Home = () => {
   return (
     <>
+      <Meta title={"Home"} />
       <section className="home-wrapper-1 py-5">
         <div className="container-xxl" style={{ marginTop: "128px" }}>
           <div className="row">
@@ -160,7 +167,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className=" py-5">
+      <section className="home-wrapper-2 py-5">
         <div className="container-xxl">
           <div className="row">
             <div className="col-12">
@@ -226,6 +233,102 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <section className="featured-wrapper py-5 home-wrapper-2">
+        <div className="container-xxl">
+          <div className="row">
+            <div className="col-12">
+              <h3 className="section-heading">Featured Products</h3>
+            </div>
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+          </div>
+        </div>
+      </section>
+
+      <section className="famous-wrapper py-5 home-wrapper-2">
+        <div className="container-xxl">
+          <div className="row">
+            <div className="col-3">
+              <div className="famous-card position-relative bg-dark">
+                <img src={famoust1} className="img-fluid" alt="famous" />
+                <div className="famous-content position-absolute">
+                  <h5>Big Screen</h5>
+                  <h6>Smart Watch Series 7</h6>
+                  <p>From $399or $16.62/mo. for 24 mo.*</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-3">
+              <div className="famous-card position-relative bg-info">
+                <img src={famoust2} className="img-fluid" alt="famous" />
+                <div className="famous-content position-absolute">
+                  <h5 className="text-dark">Studio Display</h5>
+                  <h6 className="text-dark">600 nits of brightness.</h6>
+                  <p className="text-dark">27-inch 5K Retina display</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-3">
+              <div className="famous-card position-relative bg-dark">
+                <img src={famoust3} className="img-fluid" alt="famous" />
+                <div className="famous-content position-absolute">
+                  <h5>smartphones</h5>
+                  <h6>Smartphone 13 Pro.</h6>
+                  <p>From $999.00 for 24 mo.Footnote*</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-3">
+              <div className="famous-card position-relative bg-warning">
+                <img src={famoust4} className="img-fluid" alt="famous" />
+                <div className="famous-content position-absolute">
+                  <h5 className="text-dark">home speakers</h5>
+                  <h6 className="text-dark">Room-filling sound.</h6>
+                  <p className="text-dark">
+                    From $699 or $116.58/mo. for 12 mo.*
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="special-wrapper py-5 home-wrapper-2">
+        <div className="container-xxl">
+          <div className="row">
+            <div className="col-12">
+              <h3 className="section-heading">Special Product</h3>
+            </div>
+          </div>
+          <div className="row">
+            <SpecialProduct />
+            <SpecialProduct />
+            <SpecialProduct />
+            <SpecialProduct />
+          </div>
+        </div>
+      </section>
+
+      <section className="popular-wrapper py-5 home-wrapper-2">
+        <div className="container-xxl">
+          <div className="row">
+            <div className="col-12">
+              <h3 className="section-heading">Popular Products</h3>
+            </div>
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+          </div>
+        </div>
+      </section>
       <section className="marque-wrapper home-wrapper-2 py-5">
         <div className="container-xxl">
           <div className="row">
@@ -262,29 +365,25 @@ const Home = () => {
           </div>
         </div>
       </section>
+
       <section className="blog-wrapper py-5 home-wrapper-2">
         <div className="container-xxl">
           <div className="row">
             <div className="col-12">
               <h3 className="section-heading">Our Laterst Blogs</h3>
             </div>
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-          </div>
-        </div>
-      </section>
-      <section className="blog-wrapper py-5 home-wrapper-2">
-        <div className="container-xxl">
-          <div className="row">
-            <div className="col-12">
-              <h3 className="section-heading">Our Laterst Blogs</h3>
+            <div className="col-lg-3 col-md-3 col-sm-6 col-6 mt-3">
+              <BlogCard />
             </div>
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
+            <div className="col-lg-3 col-md-3 col-sm-6 col-6 mt-3">
+              <BlogCard />
+            </div>{" "}
+            <div className="col-lg-3 col-md-3 col-sm-6 col-6 mt-3">
+              <BlogCard />
+            </div>{" "}
+            <div className="col-lg-3 col-md-3 col-sm-6 col-6 mt-3">
+              <BlogCard />
+            </div>
           </div>
         </div>
       </section>
