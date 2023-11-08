@@ -1,13 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BreadCrumb from "../components/BreadCrumb";
 import Meta from "../components/Meta";
 import ReactStars from "react-rating-stars-component";
 import ProductCard from "../components/ProductCard";
 import Color from "../components/Color";
 import Container from "../components/Container";
+import { useDispatch, useSelector } from "react-redux";
+import { getProducts } from "../features/product/productSlice";
+import { getWithlist } from "../features/user/userSlice";
 
 const OurStore = () => {
   const [grid, setGrid] = useState(3);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getProducts());
+    dispatch(getWithlist());
+  }, []);
+  const productState = useSelector((state) => state.product.products);
+  const wishlistState = useSelector((state) => state.user.withList);
+  console.log(productState);
   return (
     <>
       <Meta title={"Our Store"} />
@@ -242,10 +253,16 @@ const OurStore = () => {
             </div>
             <div className="products-list pb-5">
               <div className="d-flex gap-10 flex-wrap">
-                <ProductCard grid={grid} />
-                <ProductCard grid={grid} />
-                <ProductCard grid={grid} />
-                <ProductCard grid={grid} />
+                {productState?.map((item, index) => {
+                  return (
+                    <ProductCard
+                      key={index}
+                      data={item}
+                      allWithlist={wishlistState}
+                      grid={grid}
+                    />
+                  );
+                })}
               </div>
             </div>
           </div>
